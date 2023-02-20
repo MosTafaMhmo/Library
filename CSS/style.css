@@ -1,0 +1,242 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-color: #deae12;
+}
+
+body {
+    font-family: "cairo", sans-serif;
+    background: linear-gradient(-45deg, #dedede, #d9c99a, #dedede);
+    scroll-behavior: smooth;
+
+}
+
+.container {
+    width: 1300px;
+    padding: 15px 30px;
+
+
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+header .container {
+    width: 1300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+
+}
+
+header .container .logo {
+    font-size: 35px;
+    font-weight: bold;
+    color: black;
+    padding-top: 5px;
+    letter-spacing: 3px;
+}
+
+header .container .logo span {
+    color: var(--main-color);
+    font-size: 35px;
+
+}
+
+header .container .settings {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-radius: 50%;
+    cursor: pointer;
+
+}
+
+header .container .settings .services {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-color);
+    font-size: 30px;
+    z-index: 2;
+}
+
+header .container .settings .add,
+header .container .settings .remove {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: var(--main-color);
+    font-size: 25px;
+    z-index: 1;
+    transition: 1s;
+    opacity: 0;
+    cursor: pointer;
+
+}
+
+header .container .settings .add {
+    top: 10px;
+    left: 20px;
+
+
+}
+
+header .container .settings .add a {
+    color: var(--main-color);
+}
+
+header .container .settings .remove {
+    top: 10px;
+    right: 20px;
+
+}
+
+header .container .settings:hover .add {
+    top: -50px;
+    left: -20px;
+    opacity: 1;
+}
+
+header .container .settings:hover .remove {
+    top: -50px;
+    right: -20px;
+    opacity: 1;
+}
+
+
+.land {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+
+.land .container {
+    position: relative;
+    background-color: transparent;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 286px);
+    gap: 50px;
+    padding: 50px 0;
+}
+
+.land .container .addbook {
+    position: absolute;
+    width: 700px;
+    height: 500px;
+    border-radius: 10px;
+    top: 80px;
+    left: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    z-index: -1;
+    opacity: 0;
+    gap: 20px;
+    transition: 1s;
+}
+
+.land .container .show {
+    z-index: 5;
+    opacity: 1;
+}
+
+
+
+
+.land .container .addbook input {
+    width: 80%;
+    border: none;
+    outline: none;
+    padding: 5px 15px;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+.land .container .addbook button {
+    width: 80%;
+    border: none;
+    outline: none;
+    padding: 5px 15px;
+    border-radius: 10px;
+    color: white;
+    background-color: #f6a519;
+    font-size: 24px;
+}
+
+.land .container .box {
+    height: 450px;
+    background-color: #e5e5e5;
+    border-radius: 0px 40px;
+    overflow: hidden;
+    box-shadow: 0 0 10px #6b6b6b;
+    color: black;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.land .container .box:hover {
+    margin-top: -3px;
+
+}
+
+.land .container .box.deletebox:hover {
+
+    box-shadow: 0 0 15px rgb(255, 63, 63);
+}
+
+.land .container .box img {
+    width: 290px;
+}
+
+.land .container .box .image {
+    position: relative;
+}
+
+.land .container .box .image::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    background: linear-gradient(transparent, #e5e5e5);
+    bottom: 0;
+    left: 0;
+}
+
+.land .container .box .text {
+    padding-left: 40px;
+    width: fit-content;
+
+}
+
+.land .container .box h2 {
+    color: var(--main-color);
+}
